@@ -46,9 +46,8 @@
                             <li><a href="{{ url('/help') }}">Help</a></li>
                             <li><a href="{{ url('/about') }}">About Us</a></li>
                             <li><a href="{{ url('/contact') }}">Contact Us</a></li>
-                        @else
-                            <li><a href="{{ url('/login') }}">Property</a></li>
-                            <li><a href="{{ url('/register') }}">Reservations</a></li>
+                        @elseif (Auth::user())
+                            <li><a href="{{ url('/login') }}">Help</a></li>
                         @endif
                     </ul>
 

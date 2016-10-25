@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PropertyTypes extends Model
 {
-    protected $fillable = [
-        'type'
-    ];
+    public $table ='property_types';
+
+    protected $primaryKey = 'tid';
 }

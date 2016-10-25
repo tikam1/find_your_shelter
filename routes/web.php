@@ -19,6 +19,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('admin', function() {
+    return 'You are not an admin';
+})->middleware('admin');
+
 Route::get('/help', function() {
     return view('website.help');
 });
@@ -31,22 +35,12 @@ Route::get('/contact', function() {
     return view('website.contact');
 });
 
-// Routes to redirects to admin's dashboard through controller...
-Route::get('admin/index', 'OwnerController@index');
-
-// Route to redirects to the page to add property...
-Route::get('property/add', 'OwnerController@add');
-
-// Route to redirect to the admin dashboard with added result after adding the property...
-Route::post('property/store', 'PropertyController@store');
-
-Route::get('/property/{id}/show', 'PropertyController@show');
-
-// Route to redirect to the admin's dashboard after updating the property...
-Route::get('/property/{id}/update', 'OwnerController@update');
-
-// Route to redirect to the admin's dashboard after removing the property...
-Route::get('/property/{id}/delete', 'PropertyController@remove');
-
-// Routes to redirects to admin's dashboard through controller...
 Route::get('user/index', 'UserController@index');
+
+Route::get('property/add', function() {
+    return view('property.add');
+});
+
+Route::get('dashboard', function() {
+    return view('admin.dashboard');
+});

@@ -26,10 +26,10 @@ class CreatePropertiesTable extends Migration
             $table->foreign('tid')->references('tid')->on('property_types')->onDelete('cascade');
             $table->integer('aid')->unsigned();
             $table->foreign('aid')->references('aid')->on('availability')->onDelete('cascade');
-            $table->string('availability')->default('Yes');
             $table->text('features');
             $table->text('other_notes');
             $table->string('owner');
+            $table->string('contact');
             $table->string('address');
             $table->timestamps();
         });
