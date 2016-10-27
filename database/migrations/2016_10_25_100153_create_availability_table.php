@@ -15,19 +15,19 @@ class CreateAvailabilityTable extends Migration
     {
         Schema::create('availability', function (Blueprint $table) {
             $table->increments('aid');
-            $table->boolean('state');
+            $table->string('state');
             $table->timestamps();
         });
 
         DB::table('availability')->insert(
             array(
-                'state' => '0'
+                'state' => 'Available'
             )
         );
 
         DB::table('availability')->insert(
             array(
-                'state' => '1'
+                'state' => 'Reserved'
             )
         );
     }

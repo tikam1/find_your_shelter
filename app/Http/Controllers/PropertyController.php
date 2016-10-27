@@ -2,45 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Properties;
-use Request;
 
 class PropertyController extends Controller
 {
-    public function store()
-    {
-        Properties::create(Request::all());
-
-        return redirect('admin/index');
-    }
-
-    public function show($id)
-    {
+    public function showAdmin($id) {
         $properties = Properties::findOrFail($id);
 
-        return view('property.show', compact('properties'));
+        return view('property.showAdmin', compact('properties'));
     }
 
-    public function update($id)
-    {
-        $update = Properties::findOrFail($id);
+    public function update($id, Request $request) {
+        $properties = Properties::findOrFail($id);
 
-        return view('property.update', compact('update'));
+        $properties->update($request->all());
+
+        return view('property.updated', compact('properties'));
     }
 
-    public function change($id)
-    {
-        $change = Properties::findOrFail($id);
-        $change->update();
-        return redirect('admin/index', compact('change'));
-    }
+    public function showUser($id) {
+        $properties = Properties::findOrFail($id);
 
-    public function remove($id)
-    {
-        $remove = Properties::find($id);
-        $remove->delete();
-        return redirect('admin/index');
+        return view('property.showUser', compact('properties'));
     }
 }

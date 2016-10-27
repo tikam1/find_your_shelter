@@ -15,10 +15,13 @@ class CreateReservationsTable extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->increments('res_id');
-            $table->integer('pid')->unsigned();
-            $table->foreign('pid')->references('pid')->on('properties')->onDelete('cascade');
-            $table->integer('id')->unsigned();
-            $table->foreign('id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('name');
+            $table->string('email');
+            $table->string('contact');
+            $table->string('district');
+            $table->string('vdc');
+            $table->string('ward');
+            $table->string('house');
             $table->timestamps();
         });
     }

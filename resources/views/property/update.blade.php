@@ -5,15 +5,14 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Update your Property</div>
+                    <div class="panel-heading"><a href="/admin/dashboard"><- Cancel</a>
+                        <h3 style="text-align: center">Update your Property</h3></div>
 
                     <div class="panel-body">
-
-                        @foreach ($properties as $property)
-                            {!! Form::open(['url' => 'property/store']) !!}
+                        {!! Form::model($properties, ['method' => 'PATCH', 'action' => ['PropertyController@update', $properties->pid]]) !!}
 
                         <div class="form-group">
-                            {!! Form::label('house_img', 'Image of the House:') !!}
+                            {!! Form::label('house_img', 'Image of the House/Building:') !!}
                             {!! Form::file('house_img', null, ['class' => 'form-control'] ) !!}
                         </div>
 
@@ -23,23 +22,23 @@
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('city', 'City:') !!}
-                            {!! Form::text('city', null, ['class' => 'form-control'] ) !!}
+                            {!! Form::label('vdc_mun', 'VDC/Municipality:') !!}
+                            {!! Form::text('vdc_mun', null, ['class' => 'form-control'] ) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('city_area', 'City Area:') !!}
-                            {!! Form::text('city_area', null, ['class' => 'form-control'] ) !!}
+                            {!! Form::label('ward', 'Ward:') !!}
+                            {!! Form::text('ward', null, ['class' => 'form-control'] ) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('house_no', 'House Number/Code:') !!}
-                            {!! Form::text('house_no', null, ['class' => 'form-control'] ) !!}
+                            {!! Form::label('house', 'House Number/Code:') !!}
+                            {!! Form::text('house', null, ['class' => 'form-control'] ) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('no_of_rooms', 'Number of Rooms:') !!}
-                            {!! Form::number('no_of_rooms', null, ['class' => 'form-control'] ) !!}
+                            {!! Form::label('rooms', 'Number of Rooms:') !!}
+                            {!! Form::number('rooms', null, ['class' => 'form-control'] ) !!}
                         </div>
 
                         <div class="form-group">
@@ -48,13 +47,8 @@
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('availability', 'Available/Rented:') !!}
-                            <br/>
-                            {!! Form::radio('availability', 'Available', ['class' => 'form-control'] ) !!}
-                            {!! Form::label('availability', 'Available') !!}
-                            <br/>
-                            {!! Form::radio('availability', 'Rented', ['class' => 'form-control'] ) !!}
-                            {!! Form::label('availability', 'Rented') !!}
+                            {!! Form::label('aid', 'Available/Reserved:') !!}
+                            {!! Form::select('aid', ['1' => 'Yes', '2' => 'No'], ['class' => 'form-control'] ) !!}
                         </div>
 
                         <div class="form-group">
@@ -63,22 +57,27 @@
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('other_notes', 'Other Notes:') !!}
-                            {!! Form::textarea('other_notes', null, ['class' => 'form-control'] ) !!}
+                            {!! Form::label('notes', 'Other Notes:') !!}
+                            {!! Form::textarea('notes', null, ['class' => 'form-control'] ) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('type_id', 'Type:') !!}
-                            {!! Form::select('type_id', ['1' => 'Room', '2' => 'Flat', '3' => 'House'], ['class' => 'form-control'] ) !!}
+                            {!! Form::label('owner', 'Name of the Owner: ') !!}
+                            {!! Form::text('owner', null, ['class' => 'form-control'] ) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('owner_id', 'Name of Owner: ') !!}
-                            {!! Form::number('owner_id', null, ['class' => 'form-control'] ) !!}
+                            {!! Form::label('address', 'Address: ') !!}
+                            {!! Form::text('address', null, ['class' => 'form-control'] ) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::submit('Add Property', ['class' => 'btn btn-primary form-control']) !!}
+                            {!! Form::label('contact', 'Contact of Owner: ') !!}
+                            {!! Form::text('contact', null, ['class' => 'form-control'] ) !!}
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::submit('Edit Property Details', ['class' => 'btn btn-primary form-control']) !!}
                         </div>
                         {!! Form::close() !!}
                     </div>

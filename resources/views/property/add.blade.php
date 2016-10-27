@@ -5,13 +5,14 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading"><h4>Add a new Property</h4></div>
+                    <div class="panel-heading"><a href="/admin/options"><- Go back</a>
+                        <h3 style="text-align: center">Add a new Property</h3></div>
 
                     <div class="panel-body">
-                        {!! Form::open(['url' => '']) !!}
+                        {!! Form::open(['url' => 'property/store']) !!}
 
                         <div class="form-group">
-                            {!! Form::label('house_img', 'Image of the House:') !!}
+                            {!! Form::label('house_img', 'Image of the House/Building:') !!}
                             {!! Form::file('house_img', null, ['class' => 'form-control'] ) !!}
                         </div>
 
@@ -21,23 +22,23 @@
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('city', 'City:') !!}
-                            {!! Form::text('city', null, ['class' => 'form-control'] ) !!}
+                            {!! Form::label('vdc_mun', 'VDC/Municipality:') !!}
+                            {!! Form::text('vdc_mun', null, ['class' => 'form-control'] ) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('city_area', 'City Area:') !!}
-                            {!! Form::text('city_area', null, ['class' => 'form-control'] ) !!}
+                            {!! Form::label('ward', 'Ward:') !!}
+                            {!! Form::text('ward', null, ['class' => 'form-control'] ) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('house_no', 'House Number/Code:') !!}
-                            {!! Form::text('house_no', null, ['class' => 'form-control'] ) !!}
+                            {!! Form::label('house', 'House Number/Code:') !!}
+                            {!! Form::text('house', null, ['class' => 'form-control'] ) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('no_of_rooms', 'Number of Rooms:') !!}
-                            {!! Form::number('no_of_rooms', null, ['class' => 'form-control'] ) !!}
+                            {!! Form::label('rooms', 'Number of Rooms:') !!}
+                            {!! Form::number('rooms', null, ['class' => 'form-control'] ) !!}
                         </div>
 
                         <div class="form-group">
@@ -47,12 +48,12 @@
 
                         <div class="form-group">
                             {!! Form::label('tid', 'Type:') !!}
-                            {!! Form::select('tid', ['Room' => 'Room', 'Flat' => 'Flat'], ['class' => 'form-control'] ) !!}
+                            {!! Form::select('tid', ['1' => 'Room', '2' => 'Flat'], ['class' => 'form-control'] ) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('availability', 'Available/Rented:') !!}
-                            {!! Form::select('aid', ['0' => 'Yes', '1' => 'No'], ['class' => 'form-control'] ) !!}
+                            {!! Form::label('aid', 'Available/Rented:') !!}
+                            {!! Form::select('aid', ['1' => 'Available', '2' => 'Reserved'], ['class' => 'form-control'] ) !!}
                         </div>
 
                         <div class="form-group">
@@ -61,12 +62,12 @@
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('other_notes', 'Other Notes:') !!}
-                            {!! Form::textarea('other_notes', null, ['class' => 'form-control'] ) !!}
+                            {!! Form::label('notes', 'Other Notes:') !!}
+                            {!! Form::textarea('notes', null, ['class' => 'form-control'] ) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('owner', 'Name of Owner: ') !!}
+                            {!! Form::label('owner', 'Name of the Owner: ') !!}
                             {!! Form::text('owner', null, ['class' => 'form-control'] ) !!}
                         </div>
 
@@ -76,9 +77,11 @@
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('contact', 'Contact of Owner: ') !!}
+                            {!! Form::label('contact', 'Contact: ') !!}
                             {!! Form::text('contact', null, ['class' => 'form-control'] ) !!}
                         </div>
+
+                        <hr/>
 
                         <div class="form-group">
                             {!! Form::submit('Add Property', ['class' => 'btn btn-primary form-control']) !!}

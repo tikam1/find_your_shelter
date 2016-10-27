@@ -5,7 +5,8 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading"><h3 style="text-align: center">Property Detail</h3></div>
+                    <div class="panel-heading"><a href="/admin/dashboard"><- Go back</a>
+                        <h3 style="text-align: center">Property Detail</h3></div>
 
                     <div class="panel-body">
                         <article>
@@ -53,7 +54,9 @@
                                     <span style = 'color:red' >{{ $properties->contact }}</span>
                                 </h4>
 
-                                <a href="{{url('admin/dashboard')}}" class="btn btn-primary form-control">Go to Dashboard</a>
+                                <hr/>
+
+                                <a href="{{url('property/reserve')}}/{{ $properties->pid }}" class="btn btn-primary form-control">Reserve Property</a>
                             </ul>
                             <hr/>
                         </article>

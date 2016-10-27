@@ -35,12 +35,31 @@ Route::get('/contact', function() {
     return view('website.contact');
 });
 
-Route::get('user/index', 'UserController@index');
+Route::get('admin/dashboard','AdminController@dashboard');
 
-Route::get('property/add', function() {
+Route::get('admin/options', function() {
+    return view('admin.options');
+});
+
+Route::get('property/add', function()
+{
     return view('property.add');
 });
 
-Route::get('dashboard', function() {
-    return view('admin.dashboard');
-});
+Route::post('property/store', 'AdminController@add');
+
+Route::get('admin/search', 'AdminController@search');
+
+Route::get('property/{id}/show/admin', 'PropertyController@showAdmin');
+
+Route::get('property/update/{id}', 'AdminController@update');
+
+Route::resource('property', 'PropertyController');
+
+Route::get('property/delete/{id}', 'AdminController@delete');
+
+Route::get('user/dashboard', 'UserController@dashboard');
+
+Route::get('user/search', 'UserController@search');
+
+Route::get('property/{id}/show/user', 'PropertyController@showUser');

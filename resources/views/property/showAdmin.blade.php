@@ -5,13 +5,14 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading"><h3 style="text-align: center">Property Detail</h3></div>
+                    <div class="panel-heading"><a href="/admin/dashboard"><- Go back</a>
+                        <h3 style="text-align: center">Property Detail</h3></div>
 
                     <div class="panel-body">
                         <article>
                             <ul>
                                 <h4 sytle="content-align: center">Image of the House:</h4>
-                            <!-- <img src="/uploads/founds/{{ $properties->house_img}}" style="width:200px; height:200px; float:left; border-radius:15%; margin-right:25px;"> -->
+                                <!-- <img src="/uploads/founds/{{ $properties->house_img}}" style="width:200px; height:200px; float:left; border-radius:15%; margin-right:25px;"> -->
                                 <br/>
                                 <h4>Location:
                                     <span style = 'color:red' >{{ $properties->district }},
@@ -29,7 +30,7 @@
                                     <span style = 'color:red' >{{ $properties->rent }}</span>  |
                                     Type:
                                     <span style = 'color:red' >{{ $properties->tid }}</span>  |
-                                    Available/Rented:
+                                    Available:
                                     <span style = 'color:red' >{{ $properties->aid }}</span>
                                 </h4>
 
@@ -45,7 +46,7 @@
 
                                 <hr/>
 
-                                <h4>Owner:
+                                <h4>Name of the Owner:
                                     <span style = 'color:red' >{{ $properties->owner }}</span>  |
                                     Address:
                                     <span style = 'color:red' >{{ $properties->address }}</span>  |
@@ -53,7 +54,13 @@
                                     <span style = 'color:red' >{{ $properties->contact }}</span>
                                 </h4>
 
-                                <a href="{{url('admin/dashboard')}}" class="btn btn-primary form-control">Go to Dashboard</a>
+                                <hr/>
+
+                                <a href="{{url('property/update')}}/{{ $properties->pid }}" class="btn btn-primary form-control">Edit Property Detail</a>
+
+                                <hr/>
+
+                                <a href="{{url('property/delete')}}/{{ $properties->pid }}" class="btn btn-danger form-control">Delete Property</a>
                             </ul>
                             <hr/>
                         </article>
