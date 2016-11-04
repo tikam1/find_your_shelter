@@ -8,11 +8,10 @@
                     <div class="panel-heading"><h3 style="text-align: center">Property Detail</h3></div>
 
                     <div class="panel-body">
+
                         <article>
                             <ul>
-                                <h4 sytle="content-align: center">Image of the House:</h4>
-                            <!-- <img src="/uploads/founds/{{ $properties->house_img}}" style="width:200px; height:200px; float:left; border-radius:15%; margin-right:25px;"> -->
-                                <br/>
+
                                 <h4>Location:
                                     <span style = 'color:red' >{{ $properties->district }},
                                         {{ $properties->vdc_mun }},
@@ -28,9 +27,9 @@
                                     Rental fee in Rs:
                                     <span style = 'color:red' >{{ $properties->rent }}</span>  |
                                     Type:
-                                    <span style = 'color:red' >{{ $properties->tid }}</span>  |
+                                    <span style = 'color:red' >{{ $type->type }}</span>  |
                                     Available/Rented:
-                                    <span style = 'color:red' >{{ $properties->aid }}</span>
+                                    <span style = 'color:red' >{{ $avail->state }}</span>
                                 </h4>
 
                                 <hr/>
@@ -53,10 +52,13 @@
                                     <span style = 'color:red' >{{ $properties->contact }}</span>
                                 </h4>
 
-                                <a href="{{url('admin/dashboard')}}" class="btn btn-primary form-control">Go to Dashboard</a>
+                                <a href="{{url('/admin/dashboard')}}" class="btn btn-primary form-control">Go to Dashboard</a>
                             </ul>
+
                             <hr/>
+
                         </article>
+
                     </div>
                 </div>
             </div>

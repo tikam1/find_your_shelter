@@ -12,11 +12,6 @@
                         {!! Form::model($properties, ['method' => 'PATCH', 'action' => ['PropertyController@update', $properties->pid]]) !!}
 
                         <div class="form-group">
-                            {!! Form::label('house_img', 'Image of the House/Building:') !!}
-                            {!! Form::file('house_img', null, ['class' => 'form-control'] ) !!}
-                        </div>
-
-                        <div class="form-group">
                             {!! Form::label('district', 'District:') !!}
                             {!! Form::text('district', null, ['class' => 'form-control'] ) !!}
                         </div>
@@ -79,6 +74,7 @@
                         <div class="form-group">
                             {!! Form::submit('Edit Property Details', ['class' => 'btn btn-primary form-control']) !!}
                         </div>
+
                         {!! Form::close() !!}
                     </div>
                 </div>

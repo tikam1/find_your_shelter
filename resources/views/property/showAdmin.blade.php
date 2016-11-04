@@ -9,11 +9,10 @@
                         <h3 style="text-align: center">Property Detail</h3></div>
 
                     <div class="panel-body">
+
                         <article>
                             <ul>
-                                <h4 sytle="content-align: center">Image of the House:</h4>
-                                <!-- <img src="/uploads/founds/{{ $properties->house_img}}" style="width:200px; height:200px; float:left; border-radius:15%; margin-right:25px;"> -->
-                                <br/>
+
                                 <h4>Location:
                                     <span style = 'color:red' >{{ $properties->district }},
                                         {{ $properties->vdc_mun }},
@@ -29,9 +28,9 @@
                                     Rental fee in Rs:
                                     <span style = 'color:red' >{{ $properties->rent }}</span>  |
                                     Type:
-                                    <span style = 'color:red' >{{ $properties->tid }}</span>  |
+                                    <span style = 'color:red' >{{ $type->type }}</span>  |
                                     Available:
-                                    <span style = 'color:red' >{{ $properties->aid }}</span>
+                                    <span style = 'color:red' >{{ $avail->state }}</span>
                                 </h4>
 
                                 <hr/>
@@ -56,14 +55,17 @@
 
                                 <hr/>
 
-                                <a href="{{url('property/update')}}/{{ $properties->pid }}" class="btn btn-primary form-control">Edit Property Detail</a>
+                                <a href="{{url('/property/update')}}/{{ $properties->pid }}" class="btn btn-primary form-control">Edit Property Detail</a>
 
                                 <hr/>
 
-                                <a href="{{url('property/delete')}}/{{ $properties->pid }}" class="btn btn-danger form-control">Delete Property</a>
+                                <a href="{{url('/property/delete')}}/{{ $properties->pid }}" class="btn btn-danger form-control">Delete Property</a>
                             </ul>
+
                             <hr/>
+
                         </article>
+
                     </div>
                 </div>
             </div>

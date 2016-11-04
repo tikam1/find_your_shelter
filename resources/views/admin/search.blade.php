@@ -9,7 +9,7 @@
                         <h3 style="text-align:center">Search Into A Location</h3></div>
 
                     <div class="panel-body">
-                        {!! Form::open(['url' => 'admin/search/loc']) !!}
+                        {!! Form::open(['url' => '/admin/search/loc']) !!}
 
                         {!! Form::label('district', 'District: ') !!}
                         {!! Form::text('district', null, ['class' => 'form-control'] ) !!}

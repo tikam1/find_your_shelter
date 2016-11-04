@@ -15,7 +15,6 @@ class CreatePropertiesTable extends Migration
     {
         Schema::create('properties', function (Blueprint $table) {
             $table->increments('pid');
-            $table->string('house_img')->default('default_01.jpg');
             $table->string('district');
             $table->string('vdc_mun');
             $table->string('ward');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Properties;
 use Request;
+use App;
 use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
@@ -41,5 +42,14 @@ class AdminController extends Controller
         $properties = Properties::findOrFail($id);
 
         return view('property.update', compact('properties'));
+    }
+
+    public function delete($id)
+    {
+        $properties = Properties::findOrFail($id);
+
+        $properties->delete();
+
+        return view('property.deleted');
     }
 }

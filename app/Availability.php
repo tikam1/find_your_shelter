@@ -9,8 +9,4 @@ class Availability extends Model
     public $table ='availability';
 
     protected $primaryKey = 'aid';
-
-    public function availability() {
-        $this->belongsTo('App\Properties');
-    }
 }

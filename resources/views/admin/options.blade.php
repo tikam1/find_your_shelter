@@ -9,23 +9,23 @@
                         <h3 style="text-align: center">Here are More Options for You</h3></div>
 
                     <div class="panel-body">
-                        <a href="{{url('admin/help')}}" class="btn btn-primary form-control">Help Guidelines for You</a>
+                        <a href="{{url('/admin/help')}}" class="btn btn-success form-control">Help Guidelines for You</a>
 
                         <hr/>
 
-                        <a href="{{url('property/add')}}" class="btn btn-primary form-control">Add New Property</a>
+                        <a href="{{url('/property/add')}}" class="btn btn-primary form-control">Add New Property</a>
 
                         <hr/>
 
-                        <a href="{{url('admin/search')}}" class="btn btn-default form-control">Search for Property</a>
+                        <a href="{{url('/admin/search')}}" class="btn btn-default form-control">Search for Property</a>
 
                         <hr/>
 
-                        <a href="{{url('view/reservations')}}" class="btn btn-info form-control">View Reservations</a>
+                        <a href="{{url('/view/reservations')}}" class="btn btn-info form-control">View Reservations</a>
 
                         <hr/>
 
-                        <a href="{{url('admin/dashboard')}}" class="btn btn-warning form-control">Go back to Dashboard</a>
+                        <a href="{{url('/admin/dashboard')}}" class="btn btn-warning form-control">Go back to Dashboard</a>
 
                         <hr/>
                     </div>

@@ -18,10 +18,8 @@ class CreateReservationsTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('contact');
-            $table->string('district');
-            $table->string('vdc');
-            $table->string('ward');
-            $table->string('house');
+            $table->integer('pid')->unsigned();
+            $table->foreign('pid')->references('pid')->on('properties')->onDelete('cascade');
             $table->timestamps();
         });
     }

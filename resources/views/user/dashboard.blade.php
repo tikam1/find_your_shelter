@@ -6,7 +6,7 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <a href="{{url('user/search')}}" class="btn btn-info form-control">Search Property</a>
+                        <a href="{{url('/user/search')}}" class="btn btn-info form-control">Search Property</a>
                     </div>
 
                     <div class="panel-body">

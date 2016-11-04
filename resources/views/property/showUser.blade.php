@@ -5,15 +5,14 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading"><a href="/admin/dashboard"><- Go back</a>
+                    <div class="panel-heading"><a href="/user/dashboard"><- Go back</a>
                         <h3 style="text-align: center">Property Detail</h3></div>
 
                     <div class="panel-body">
+
                         <article>
                             <ul>
-                                <h4 sytle="content-align: center">Image of the House:</h4>
-                            <!-- <img src="/uploads/founds/{{ $properties->house_img}}" style="width:200px; height:200px; float:left; border-radius:15%; margin-right:25px;"> -->
-                                <br/>
+
                                 <h4>Location:
                                     <span style = 'color:red' >{{ $properties->district }},
                                         {{ $properties->vdc_mun }},
@@ -29,9 +28,7 @@
                                     Rental fee in Rs:
                                     <span style = 'color:red' >{{ $properties->rent }}</span>  |
                                     Type:
-                                    <span style = 'color:red' >{{ $properties->tid }}</span>  |
-                                    Available/Rented:
-                                    <span style = 'color:red' >{{ $properties->aid }}</span>
+                                    <span style = 'color:red' >{{ $type->type }}</span>
                                 </h4>
 
                                 <hr/>
@@ -56,10 +53,14 @@
 
                                 <hr/>
 
-                                <a href="{{url('property/reserve')}}/{{ $properties->pid }}" class="btn btn-primary form-control">Reserve Property</a>
                             </ul>
+
+                            <a href="{{url('/proceed/reserve')}}/{{ $properties->pid }}" class="btn btn-primary form-control">Reserve Property</a>
+
                             <hr/>
+
                         </article>
+
                     </div>
                 </div>
             </div>

@@ -9,12 +9,7 @@
                         <h3 style="text-align: center">Add a new Property</h3></div>
 
                     <div class="panel-body">
-                        {!! Form::open(['url' => 'property/store']) !!}
-
-                        <div class="form-group">
-                            {!! Form::label('house_img', 'Image of the House/Building:') !!}
-                            {!! Form::file('house_img', null, ['class' => 'form-control'] ) !!}
-                        </div>
+                        {!! Form::open(['url' => '/property/store']) !!}
 
                         <div class="form-group">
                             {!! Form::label('district', 'District:') !!}
@@ -86,6 +81,9 @@
                         <div class="form-group">
                             {!! Form::submit('Add Property', ['class' => 'btn btn-primary form-control']) !!}
                         </div>
+
+                        <hr/>
+
                         {!! Form::close() !!}
                     </div>
                 </div>
