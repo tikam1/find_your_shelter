@@ -16,17 +16,22 @@
                         <hr/>
 
                         @foreach ($properties as $property)
+
                             <article>
                                 <h2>
                                     <a href="/property/{!! $property->pid !!}/show/user">
                                         District: {{ $property->district }}<br/>
                                         VDC/Municipality: {{ $property->vdc_mun }}<br/>
                                         Ward: {{ $property->ward }}<br/>
-                                        House Code/Number: {{ $property->house }}
+                                        House Number: {{ $property->house }}
                                     </a>
                                 </h2>
                             </article>
+
+                            <hr/>
+
                         @endforeach
+
                     </div>
                 </div>
             </div>

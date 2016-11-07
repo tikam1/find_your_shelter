@@ -16,6 +16,7 @@
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Contact</th>
+                                    <th>Date of Reservation</th>
                                     <th>Property</th>
                                     <th>Action</th>
                                 </tr>
@@ -28,7 +29,8 @@
                                     <td>{{ $reservation->name }}</td>
                                     <td>{{ $reservation->email }}</td>
                                     <td>{{ $reservation->contact }}</td>
-                                    <td><a href="/property/{{ $reservation->pid }}/show/admin">{{ $reservation->pid }}</a></td>
+                                    <td>{{ $reservation->created_at }}</td>
+                                    <td><a href="/property/{{ $reservation->pid }}/show/admin">View Property</a></td>
                                     <td><a href="/delete/reservation/{{ $reservation->res_id }}" class="btn btn-primary">Delete</a></td>
                                 </tr>
                                 </tbody>

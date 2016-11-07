@@ -9,7 +9,7 @@
                         <h3 style="text-align: center">Here are More Options for You</h3></div>
 
                     <div class="panel-body">
-                        <a href="{{url('/admin/help')}}" class="btn btn-success form-control">Help Guidelines for You</a>
+                        <a href="{{url('/admin/help')}}" class="btn btn-success form-control">Help & Guidelines for You</a>
 
                         <hr/>
 

@@ -22,7 +22,7 @@
 
                                 <hr/>
 
-                                <h4>House Code/Number:
+                                <h4>House Number:
                                     <span style = 'color:red'>{{ $properties->house }}</span>  |
                                     Number of Rooms:
                                     <span style = 'color:red'>{{ $properties->rooms }}</span>  |

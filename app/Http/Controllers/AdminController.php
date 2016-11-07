@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Properties;
-use Request;
 use App;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\StoreProperty;
+use App\Http\Requests\AdminSearch;
+use Request;
 
 class AdminController extends Controller
 {
@@ -17,24 +19,25 @@ class AdminController extends Controller
         return view('admin.dashboard', compact('properties'));
     }
 
-    public function store(Request $request)
+    public function add(StoreProperty $requests)
     {
-        $this->validate($request, [
-            'house_img' => 'required|max:255',
-            'district' => 'required|max:255',
-            'city' => 'required',
-        ]);
-    }
-
-    public function add()
-    {
-        Properties::create(Request::all());
+        Properties::create($requests->all());
 
         return redirect('admin/dashboard');
     }
 
-    public function search() {
-        return view('admin.search');
+    public function search(AdminSearch $requests) {
+        $district = $requests->input('district');
+        $vdc_mun = $requests->input('vdc_mun');
+        $ward = $requests->input('ward');
+        $house = $requests->input('house');
+
+        $properties = DB::table('properties')->where('district', 'LIKE', '%' . $district . '%')
+            ->where('vdc_mun', 'LIKE', '%' . $vdc_mun . '%')
+            ->where('ward', 'LIKE', '%' . $ward . '%')
+            ->where('house', 'LIKE', '%' . $house . '%')->get();
+
+        return view('admin.result', compact('properties'));
     }
 
     public function update($id)

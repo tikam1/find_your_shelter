@@ -20,7 +20,7 @@ class Admin
         if (Auth::guard($guard)->check() && Auth::user()->role==1) {
             return $next($request);
         }else{
-            return redirect('/');
+            return redirect()->back();
         }
     }
 }

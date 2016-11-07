@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading"><a href="/admin/dashboard"><- Go back</a>
+                    <div class="panel-heading"><a href="/admin/dashboard"><- Go back to Dashboard</a>
                         <h3 style="text-align: center">Property Detail</h3></div>
 
                     <div class="panel-body">
@@ -21,7 +21,7 @@
 
                                 <hr/>
 
-                                <h4>House Code/Number:
+                                <h4>House Number:
                                     <span style = 'color:red'>{{ $properties->house }}</span>  |
                                     Number of Rooms:
                                     <span style = 'color:red'>{{ $properties->rooms }}</span>  |

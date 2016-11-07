@@ -15,9 +15,9 @@
                             <br/>
                         Email: <span style="color:red">tikam_ra1i@yahoo.com</span>
                             <br/>
-                        Contact: <span style="color:red">9819380239</span>
+                        Contact: <span style="color:red">+9779819380239</span>
                             <br/>
-                        Facebook: f<span style="color:red">acebook.com/rai.13xt</span>
+                        Facebook: <span style="color:red">facebook.com/rai.13xt</span>
                             <br/>
                         Address: <span style="color:red">Kathmandu, Maitidevi, Ghatekulo</span>
                             <br/>

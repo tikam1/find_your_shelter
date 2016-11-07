@@ -7,14 +7,15 @@ use Illuminate\Http\Request as Req;
 use App\Http\Requests;
 Use App\Properties;
 use App\Reservations;
-use Request;
 use App\PropertyTypes;
 Use App\Availability;
+use App\Http\Requests\Reservations as Reservation;
 use Illuminate\Support\Facades\DB;
+
 
 class ReservationController extends Controller
 {
-    public function submit($id, Req $request)
+    public function submit($id, Reservation $request)
     {
         $properties = Properties::findOrFail($id);
 
@@ -36,7 +37,11 @@ class ReservationController extends Controller
 
     public function show()
     {
-        $reservations = Reservations::all();
+        //$reservations = Reservations::all();
+
+        $reservations = DB::table('reservations')
+            ->orderBy('created_at', 'desc')
+            ->get();
 
         //$properties = Properties::find($reservations->pid);
 

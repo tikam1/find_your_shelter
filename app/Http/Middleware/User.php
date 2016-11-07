@@ -20,7 +20,7 @@ class User
         if (Auth::guard($guard)->check() && Auth::user()->role==0) {
             return $next($request);
         }else{
-            return redirect('/');
+            return redirect()->back();
         }
     }
 }

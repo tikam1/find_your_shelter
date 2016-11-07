@@ -26,7 +26,7 @@
                                         <br/>
                                         Ward: {{ $property->ward }}
                                         <br/>
-                                        House Code/Number: {{ $property->house }}
+                                        House Number: {{ $property->house }}
                                     </a>
                                 </h2>
                             </article>

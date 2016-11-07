@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('Find Your Shelter', 'Find Your Shelter') }}</title>
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
@@ -35,8 +35,13 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">Find Your Shelter
+                    @if (Auth::guest())<a class="navbar-brand" href="{{ url('/') }}">Find Your Shelter
                     </a>
+                    @elseif (Auth::user()->role == '1')<a class="navbar-brand" href="{{ url('/admin/dashboard') }}">Find Your Shelter
+                    </a>
+                    @elseif (Auth::user()->role == '0')<a class="navbar-brand" href="{{ url('/user/dashboard') }}">Find Your Shelter
+                    </a>
+                    @endif
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -46,8 +51,6 @@
                             <li><a href="{{ url('/help') }}">Help</a></li>
                             <li><a href="{{ url('/about') }}">About Us</a></li>
                             <li><a href="{{ url('/contact') }}">Contact Us</a></li>
-                        @elseif (Auth::user())
-                            <li><a href="{{ url('/login') }}">Help</a></li>
                         @endif
                     </ul>
 
